@@ -5,11 +5,9 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 
 API_TOKEN = os.getenv('API_TOKEN')
-
 if not API_TOKEN:
-    raise ValueError("Не найден токен API! Добавьте переменную API_TOKEN")
+    raise ValueError("Не найден API_TOKEN!")
 
-logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
 
@@ -94,4 +92,5 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
+
     asyncio.run(main())
